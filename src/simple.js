@@ -580,6 +580,7 @@
     }
 
     utils.extend(Simple, Events);
+    
 
     return Simple;
 });
