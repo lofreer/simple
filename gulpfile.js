@@ -4,16 +4,16 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint');
 
 gulp.task('jshint', function(){
-    return gulp.src('src/simple.js')
+    return gulp.src('lib/simple.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
 gulp.task('minifyjs', function(){
-    return gulp.src('src/simple.js')
+    return gulp.src('lib/simple.js')
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest('src'));
+        .pipe(gulp.dest('lib'));
 });
 
 gulp.task('default', ['jshint'], function(){
@@ -21,5 +21,5 @@ gulp.task('default', ['jshint'], function(){
 });
 
 gulp.task('watch', function() {
-	gulp.watch('src/*.js', ['default']);
+	gulp.watch('lib/*.js', ['default']);
 });
